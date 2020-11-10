@@ -1,17 +1,18 @@
 import React from 'react';
 import {Card,Button} from 'react-bootstrap';
 
-const News = () => {
+const News = (props) => {
+  const {title,description,urlToImage}=props.article
     return (
        <div>
          <Card>
         <Card.Header>Featured</Card.Header>
         <Card.Body>
-          <Card.Title>Special title treatment</Card.Title>
-          <Card.Text>
-            With supporting text below as a natural lead-in to additional content.
-          </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
+          <img style={{height:'300px',width:'100%'}} src={urlToImage} alt=""/>
+          <Card.Title> {title} </Card.Title>
+          <Card.Text>{description} </Card.Text>
+          <Button variant="primary" >Go somewhere</Button>
+    
         </Card.Body>
       </Card>
        </div>
